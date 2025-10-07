@@ -502,7 +502,14 @@ _MF_SINGLTN(_PFX_CORE + "Impl", _MF_OBJECT, /**  @lends myfaces._impl.core.Impl.
         }
 
         //the final list must be blank separated
-        passThrgh[target] = this._remapNamingContainer(elementId, form, namingContainerId,vals).join(" ");
+
+        // check the final identifier from _remapNamingContainer actually exists, and if doesn't, fall back to
+        // using the identifier provided.
+
+        var theVals = vals.slice();
+        var finalIdentifier = this._remapNamingContainer(elementId, form, namingContainerId,vals).join(" ");
+        passThrgh[target] = (!!document.getElementById(finalIdentifier)) ? finalIdentifier : theVals.join(" ");
+
         return passThrgh;
     },
 
