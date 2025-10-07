@@ -42,11 +42,11 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://gitbox.apache.org/repos/asf/myfaces.git</connection>
-        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/myfaces.git</developerConnection>
-        <url>https://gitbox.apache.org/repos/asf?p=myfaces.git</url>
-      <tag>HEAD</tag>
-  </scm>
+        <connection>scm:git:git@github.com:tomitribe/myfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:tomitribe/myfaces.git</developerConnection>
+        <url>scm:git:git@github.com:tomitribe/myfaces.git</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <modules>
         <module>parent</module>
@@ -218,13 +218,19 @@
          https://svn.apache.org/repos/asf/myfaces/site/publish/ 
          
          -->
-  <distributionManagement>
-    <site>
-      <id>myfaces-local-staging</id>
-      <name>Apache Website</name>
-      <url>scp://localhost/${user.home}/myfaces-site/${siteModule.path}</url>
-    </site>
-  </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>tomitribe.releases.https</id>
+            <name>Tomitribe Release Distribution Repository</name>
+            <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>tomitribe.snapshots.https</id>
+            <name>Tomitribe Development Snapshot Repository</name>
+            <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+        </snapshotRepository>
+    </distributionManagement>
   <properties>
     <siteModule.path>core23/module</siteModule.path>
     <site.mainDirectory>${user.home}/myfaces-site/checkout</site.mainDirectory>
