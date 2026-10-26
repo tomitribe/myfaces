@@ -330,7 +330,7 @@
                     <plugin>
                         <artifactId>maven-release-plugin</artifactId>
                         <configuration>
-                            <arguments>-Papache-release -DperformRelease</arguments>
+                            <arguments>-DperformRelease</arguments>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -673,13 +673,19 @@
             <url>scpexe://people.apache.org/www/myfaces.apache.org/core21/</url>
         </site>
     </distributionManagement>-->
-  <distributionManagement>
-    <site>
-      <id>myfaces-local-staging</id>
-      <name>Apache Website</name>
-      <url>scp://localhost/${user.home}/myfaces-site/${siteModule.path}</url>
-    </site>
-  </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>tomitribe.releases.https</id>
+            <name>Tomitribe Release Distribution Repository</name>
+            <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>tomitribe.snapshots.https</id>
+            <name>Tomitribe Development Snapshot Repository</name>
+            <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+        </snapshotRepository>
+    </distributionManagement>
   <properties>
     <siteModule.path>core23</siteModule.path>
     <site.mainDirectory>${user.home}/myfaces-site/checkout</site.mainDirectory>
@@ -691,7 +697,10 @@
     <siteScmPublish.url>scm:svn:https://svn.apache.org/repos/asf/myfaces/site/publish/</siteScmPublish.url>
   </properties>
 
-  <scm>
-    <tag>myfaces-core-module-3.0.2-TT.1-SNAPSHOT</tag>
-  </scm>
+    <scm>
+        <connection>scm:git:git@github.com:tomitribe/myfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:tomitribe/myfaces.git</developerConnection>
+        <url>https://github.com/tomitribe/myfaces</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>
