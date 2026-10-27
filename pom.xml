@@ -34,7 +34,7 @@
         This project is the home of the MyFaces implementation of the Jakarta Faces 4.0 specification, and
         consists of an API module (jakarta.faces.* classes) and an implementation module (org.apache.myfaces.* classes).
     </description>
-    <version>4.0.2</version>
+    <version>4.0.2-TT.1-SNAPSHOT</version>
     <url>https://myfaces.apache.org/#/core40</url>
 
     <issueManagement>
@@ -43,10 +43,10 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://gitbox.apache.org/repos/asf/myfaces.git</connection>
-        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/myfaces.git</developerConnection>
-        <url>https://gitbox.apache.org/repos/asf?p=myfaces.git</url>
-        <tag>myfaces-core-module-4.0.2</tag>
+        <connection>scm:git:git@github.com:tomitribe/myfaces.git</connection>
+        <developerConnection>scm:git:git@github.com:tomitribe/myfaces.git</developerConnection>
+        <url>https://github.com/tomitribe/myfaces</url>
+        <tag>HEAD</tag>
     </scm>
   
     <modules>
@@ -201,7 +201,7 @@
                     <plugin>
                         <artifactId>maven-release-plugin</artifactId>
                         <configuration>
-                            <arguments>-Papache-release -DperformRelease</arguments>
+                            <arguments>-DperformRelease</arguments>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -239,11 +239,17 @@
 
     -->
     <distributionManagement>
-        <site>
-            <id>myfaces-local-staging</id>
-            <name>Apache Website</name>
-            <url>scp://localhost/${user.home}/myfaces-site/${siteModule.path}</url>
-        </site>
+        <repository>
+            <id>tomitribe.releases.https</id>
+            <name>Tomitribe Release Distribution Repository</name>
+            <url>https://repository.tomitribe.com/service/local/staging/deploy/maven2</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>tomitribe.snapshots.https</id>
+            <name>Tomitribe Development Snapshot Repository</name>
+            <url>https://repository.tomitribe.com/content/repositories/snapshots-tomitribe</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
