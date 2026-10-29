@@ -33,7 +33,7 @@
         This project is the home of the MyFaces implementation of the Jakarta Server Faces 3.0 specification, and
         consists of an API module (jakarta.faces.* classes) and an implementation module (org.apache.myfaces.* classes).
     </description>
-    <version>3.0.2-TT.1</version>
+    <version>3.0.2-TT.2-SNAPSHOT</version>
     <url>http://myfaces.apache.org/#/core30</url>
 
     <issueManagement>
@@ -701,6 +701,6 @@
         <connection>scm:git:git@github.com:tomitribe/myfaces.git</connection>
         <developerConnection>scm:git:git@github.com:tomitribe/myfaces.git</developerConnection>
         <url>https://github.com/tomitribe/myfaces</url>
-        <tag>myfaces-core-module-3.0.2-TT.1</tag>
+        <tag>HEAD</tag>
     </scm>
 </project>
