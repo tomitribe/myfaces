@@ -34,7 +34,7 @@
         This project is the home of the MyFaces implementation of the Jakarta Faces 4.0 specification, and
         consists of an API module (jakarta.faces.* classes) and an implementation module (org.apache.myfaces.* classes).
     </description>
-    <version>4.0.3-TT.1-SNAPSHOT</version>
+    <version>4.0.3-TT.1</version>
     <url>https://myfaces.apache.org/#/core40</url>
 
     <issueManagement>
@@ -46,7 +46,7 @@
         <connection>scm:git:git@github.com:tomitribe/myfaces.git</connection>
         <developerConnection>scm:git:git@github.com:tomitribe/myfaces.git</developerConnection>
         <url>https://github.com/tomitribe/myfaces</url>
-        <tag>HEAD</tag>
+        <tag>myfaces-core-module-4.0.3-TT.1</tag>
     </scm>
   
     <modules>
